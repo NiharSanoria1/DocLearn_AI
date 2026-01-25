@@ -1,0 +1,12 @@
+{
+  "user_id": "test_user",
+  "pdf_id": "77573c06-3e83-4ab6-a3fb-f62987065c5a",
+  "pdf_path": "data/raw/test_user/77573c06-3e83-4ab6-a3fb-f62987065c5a/original.pdf",
+  "uploaded_at": "2026-01-24T18:23:18.098508",
+  "quality": {
+    "status": "SUPPORTED",
+    "total_pages": 14,
+    "text_pages": 14,
+    "image_only_pages": 0
+  }
+}

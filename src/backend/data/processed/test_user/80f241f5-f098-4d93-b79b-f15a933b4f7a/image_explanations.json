@@ -1,0 +1,22 @@
+[
+  {
+    "image_id": "page_8_img_1",
+    "page_number": 8,
+    "image_type": "diagram",
+    "importance": "high",
+    "visual_description": "The diagram shows a feedback loop between two main components: an \u201cAgent\u201d and an \u201cEnvironment\u201d. The Agent observes the current \u201cstate\u201d (St) and receives a \u201creward\u201d (Rt). Based on this, it selects an \u201caction\u201d (At) which is sent to the Environment. The Environment then responds by sending back the next \u201cstate\u201d (St+1) and the next \u201creward\u201d (Rt+1), completing the cycle.",
+    "explanation": "This diagram represents the core structure of a Reinforcement Learning (RL) system. It illustrates how an agent learns through interaction with its environment by taking actions and receiving rewards based on those actions. The agent uses past rewards and states to decide future actions in order to maximize cumulative reward over time. The environment provides feedback (new state and reward) that informs the agent\u2019s next decision.",
+    "concepts": [
+      "Agent: The learner or decision-maker.",
+      "Environment: The world the agent interacts with.",
+      "State (St): The current situation or condition the agent observes.",
+      "Action (At): The decision or move the agent makes.",
+      "Reward (Rt): Feedback from the environment indicating how good or bad the action was.",
+      "Feedback Loop: The continuous cycle where the agent acts, receives feedback, and updates its behavior."
+    ],
+    "teaching_notes": [
+      "Students should understand that RL involves trial-and-error learning where the agent learns optimal behavior by maximizing long-term rewards. Emphasize the cyclical nature \u2014 actions lead to new states and rewards, which inform future actions. Use examples like playing games or controlling robots to illustrate real-world applications."
+    ],
+    "limitations": "The diagram does not show internal mechanisms of the agent (e.g., policy, value function, Q-learning algorithm). It also doesn\u2019t depict temporal discounting, exploration vs exploitation trade-offs, or how learning occurs over time. These are important for deeper understanding but are beyond the scope of this basic model."
+  }
+]
