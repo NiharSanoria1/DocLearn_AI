@@ -63,6 +63,10 @@ def merge_learning_unit(
     # fallback
     if not combined.strip():
         combined = raw_text or "No Context"
+    
+    # derive page numbers and image ids
+    page_numbers = sorted({ t.page_number for t in text_sources})
+    image_ids = [i.image_id for i in image_sources]
         
     return LearningUnit(
         unit_id=unit_id,
@@ -72,6 +76,8 @@ def merge_learning_unit(
         text_sources = text_sources,
         image_sources = image_sources,
         combined_explanation=combined.strip(),
+        page_numbers=page_numbers,
+        image_ids=image_ids,
         grounding={
             "pages": [page_number],
             "images" : [i.image_id for i in image_sources]

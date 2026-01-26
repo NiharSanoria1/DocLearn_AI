@@ -1,0 +1,171 @@
+[
+  {
+    "image_id": "page_3_img_1",
+    "page_number": 3,
+    "image_type": "diagram",
+    "importance": "high",
+    "visual_description": "The image displays a portion of a data table, specifically labeled as \"Final Obtained DataFrame representation.\" It has five columns: \"Text,\" \"Complaint_complaint_id,\" \"clean_text,\" and two others partially visible (\"Complaint\" and \"complaint_id\"). The rows show sample complaint entries. For example, one row contains the raw text \"Sr. Citizen discount fare in tatkal sewa from ...\", which is categorized under \"Reservation/Enquiry_Office Issues\" with ID 11. Another row shows \"RATS ARE PRESENT IN COACH B1 OF TRAIN NUMBER 1...\" categorized as \"Maintenance / Cleanliness\" with ID 7. A third row has text about a leaking toilet, also under \"Maintenance / Cleanliness\" with ID 7. The \"clean_text\" column shows the same text but with some formatting or capitalization normalized (e.g., \"sr citizen discount fare tatkal sewa jammu sta...\").",
+    "explanation": "This diagram represents a cleaned dataset used for text classification, likely for categorizing railway passenger complaints. Each row corresponds to a single complaint. The \"Text\" column holds the original user complaint message. The \"Complaint\" column assigns a category label (like \"Reservation/Enquiry_Office Issues\" or \"Maintenance / Cleanliness\") based on the content of the text. The \"complaint_id\" column provides a unique identifier for each complaint record. The \"clean_text\" column shows the preprocessed version of the complaint text, where unnecessary capitalization or punctuation might have been removed to make it easier for machine learning models to process.",
+    "concepts": [
+      "Data Table Structure: This is a tabular representation of structured data.",
+      "Text Classification: The goal is to assign each piece of text to a predefined category.",
+      "Preprocessing: The \"clean_text\" column indicates that the raw text has been cleaned before being fed into a model.",
+      "Dataset for Machine Learning: This is the final form of data ready for training a classifier (like an LSTM model mentioned in the text)."
+    ],
+    "teaching_notes": [
+      "Students should understand that real-world text data often needs cleaning before classification. They should learn how to interpret a DataFrame structure and recognize how raw text is mapped to categories. This diagram illustrates the output of preprocessing steps and serves as input for machine learning algorithms designed to classify new, unseen complaints."
+    ],
+    "limitations": "The diagram only shows a small subset of the data. It does not show the full scope of the dataset, nor does it illustrate the actual machine learning model"
+  },
+  {
+    "image_id": "page_5_img_2",
+    "page_number": 5,
+    "image_type": "diagram",
+    "importance": "high",
+    "visual_description": "This is a WordCloud visualization. It displays numerous words related to train travel and complaints, arranged in varying sizes. The largest words \u2014 \u201ctrain,\u201d \u201ccoach,\u201d \u201cseat,\u201d \u201cstation,\u201d \u201ctravel,\u201d \u201cwater,\u201d \u201cwork,\u201d \u201cticket,\u201d \u201ccomplaint,\u201d \u201cpassenger,\u201d \u201cdelay,\u201d \u201cclean,\u201d \u201cstaff,\u201d \u201cpunctuality,\u201d \u201cbooking,\u201d \u201ccatering,\u201d \u201cemergency,\u201d \u201cmaintenance,\u201d \u201ctheft,\u201d \u201cbribery,\u201d \u201creservation,\u201d \u201cluggage,\u201d \u201cparcels,\u201d \u201cgoods,\u201d \u201cPNR,\u201d \u201ccoach,\u201d \u201cbedroll,\u201d \u201cmalfunctioning,\u201d \u201celectrical,\u201d \u201cequipment,\u201d \u201cnon-availability,\u201d \u201cunauthorized,\u201d \u201cbehavior,\u201d \u201cimproper,\u201d \u201cfeedback,\u201d \u201csuggestions,\u201d \u201crefund,\u201d \u201cattendant,\u201d \u201ctoilet,\u201d \u201cbathroom,\u201d \u201cexpress,\u201d \u201cdelhi,\u201d \u201cplatform,\u201d \u201chour,\u201d \u201curgent,\u201d \u201crequest,\u201d \u201cquality,\u201d \u201cproblem,\u201d \u201cissue,\u201d \u201cplease,\u201d \u201ckindly,\u201d \u201carrive,\u201d \u201cdeparture,\u201d \u201cdate,\u201d \u201cnumber,\u201d \u201cstatus,\u201d \u201ccharge,\u201d \u201cplz,\u201d \u201cregard,\u201d \u201crailway,\u201d \u201cclass,\u201d \u201cfare,\u201d \u201cface,\u201d \u201cplace,\u201d \u201cpoint,\u201d \u201clocal,\u201d \u201cmobile,\u201d \u201csupply,\u201d \u201cservice,\u201d \u201cfood,\u201d \u201cdrink,\u201d \u201csmell,\u201d \u201cair,\u201d \u201ccondition,\u201d \u201cwait,\u201d \u201ccondition,\u201d \u201cbert,\u201d \u201ccher,\u201d \u201clot,\u201d \u201cmake,\u201d \u201cpay,\u201d \u201cavailable,\u201d \u201cdaily,\u201d \u201cneedful,\u201d \u201cboard,\u201d \u201clight,\u201d \u201cdawn,\u201d \u201cstand,\u201d \u201cbed,\u201d \u201cwash,\u201d \u201curgent,\u201d \u201chr,\u201d \u201crail,\u201d \u201cpunish,\u201d \u201cpun,\u201d \u201csolve,\u201d \u201creach,\u201d \u201ccompilation,\u201d \u201croll,\u201d \u201ctt,\u201d \u201cexp,\u201d \u201cpatna,\u201d \u201cfan,\u201d \u201ctime,\u201d \u201cstart,\u201d \u201ctall,\u201d \u201cprovide,\u201d \u201ctili,\u201d \u201cmatter,\u201d \u201cmatters,\u201d \u201cquality,\u201d \u201cproblem,\u201d \u201cissue,\u201d \u201cplease,\u201d \u201ckindly,\u201d \u201carrive,\u201d \u201cdeparture,\u201d \u201cdate,\u201d \u201cnumber,\u201d \u201cstatus,\u201d \u201ccharge,\u201d \u201cplz,\u201d \u201cregard,\u201d \u201crailway,\u201d \u201cclass,\u201d \u201cfare,\u201d \u201cface,\u201d \u201cplace,\u201d \u201cpoint,\u201d \u201clocal,\u201d \u201cmobile,\u201d \u201csupply,\u201d \u201cservice,\u201d \u201cfood,\u201d \u201cdrink,\u201d \u201csmell,\u201d \u201cair,\u201d \u201ccondition,\u201d \u201cwait,\u201d \u201ccondition,\u201d \u201cbert,\u201d \u201ccher,\u201d \u201clot,\u201d \u201cmake,\u201d \u201cpay,\u201d \u201c",
+    "explanation": "",
+    "concepts": [],
+    "teaching_notes": [],
+    "limitations": ""
+  },
+  {
+    "image_id": "page_6_img_1",
+    "page_number": 6,
+    "image_type": "diagram",
+    "importance": "high",
+    "visual_description": "The diagram is a word cloud visualization of bigrams \u2014 pairs of consecutive words \u2014 extracted from a railway-related text corpus. Words are displayed in varying sizes, indicating their frequency or importance within the dataset. Large, prominent words like \u201ctrain\u201d, \u201cpnr\u201d, \u201ccoach\u201d, and \u201cseat\u201d suggest high-frequency terms. Smaller words surrounding them represent common bigrams such as \u201ctrain_number\u201d, \u201ccoach_seat\u201d, \u201cpnr_train\u201d, \u201ctrain_stop\u201d, etc. The layout shows these bigrams clustered around central, frequently occurring terms.",
+    "explanation": "This diagram visually represents the most common two-word combinations (bigrams) found in a railway customer service or ticketing text corpus. It serves as a visual summary of linguistic patterns and frequent phrases used in this domain. For example, \u201ctrain_number\u201d appears often because users frequently ask about train numbers; \u201ccoach_seat\u201d appears because seat availability inquiries are common. The size of each word reflects its frequency \u2014 larger words mean they appear more often in the text data.",
+    "concepts": [
+      "Bigrams: Pairs of adjacent words that occur frequently together.",
+      "Word Frequency: The diagram uses font size to indicate how often each bigram appears.",
+      "Domain-Specific Language: Terms like \u201cpnr\u201d, \u201ccoach\u201d, \u201cseat\u201d, \u201ctrain\u201d, \u201cstation\u201d reflect railway ticketing and passenger service terminology.",
+      "Text Mining/Preprocessing: This visualization is likely part of preprocessing steps before applying machine learning models (like TF-IDF or FastText embeddings mentioned in the text)."
+    ],
+    "teaching_notes": [
+      "Students should understand that:",
+      "Bigrams capture meaningful phrases or collocations (e.g., \u201ctrain_number\u201d is not just \u201ctrain\u201d + \u201cnumber\u201d but a common query).",
+      "Visualizations like this help identify important phrases for NLP tasks such as classification or sentiment analysis.",
+      "In real-world applications, these bigrams can be used as features (e.g., in TF-IDF vectors or neural network inputs).",
+      "This diagram helps students see how raw text data becomes structured information for AI models."
+    ],
+    "limitations": "- The diagram does not show exact frequencies or counts \u2014 only relative sizes. - It doesn\u2019t distinguish between meaningful bigrams and random word pairs. - It\u2019s static \u2014 doesn\u2019t show how bigrams might change over time or across different documents. - It lacks context \u2014 e.g., \u201ctrain\u201d alone could mean many things, but \u201ctrain_number\u201d clearly refers to a specific query type."
+  },
+  {
+    "image_id": "page_7_img_1",
+    "page_number": 7,
+    "image_type": "diagram",
+    "importance": "high",
+    "visual_description": "The diagram is a flowchart showing the pipeline for a machine learning model designed for multi-text classification, specifically for railway complaint categorization. It starts with a single \"Dataset\" box that splits into two streams: \"Train Dataset\" and \"Test Dataset\". Each stream goes through \"Text Pre-processing\" (which includes Stopwords removal, Split Words, and Lemmatization), then \"Feature Engineering\". The training stream continues to \"Training LSTM\", which feeds into \"Multi-Class Classification\". The test stream also goes through \"Feature Engineering\" and then merges into \"Multi-Class Classification\". Finally, both paths converge at \"Performance Evaluation\".",
+    "explanation": "This diagram illustrates the workflow of a machine learning system for classifying text data, such as railway complaints. The process begins by splitting the dataset into training and testing parts. Both parts undergo identical text pre-processing steps to clean and normalize the text data (removing stop words, splitting into words, lemmatizing). Feature engineering transforms these cleaned texts into numerical features suitable for machine learning models. For training, these features are fed into an LSTM (Long Short-Term Memory) model to learn patterns. This trained model then performs multi-class classification on both the training data (to validate its learning) and the test data (to evaluate performance). The final step, performance evaluation, measures how well the model works overall.",
+    "concepts": [
+      "Dataset Splitting: Training and testing data are separated to prevent overfitting.",
+      "Text Pre-processing: Cleaning text data to improve model accuracy.",
+      "Feature Engineering: Converting text into numerical features for machine learning.",
+      "LSTM: A type of recurrent neural network used for sequence data like text.",
+      "Multi-Class Classification: Assigning input text to one of several predefined categories.",
+      "Performance Evaluation: Measuring the effectiveness of the model using metrics like accuracy or F1-score."
+    ],
+    "teaching_notes": [
+      "Students should understand that building a text classification model involves multiple stages: preparing data, transforming it into usable features, training a model (here, LSTM), evaluating its performance, and finally assessing its effectiveness. Emphasize the importance of separating training and testing data to ensure the model generalizes well. Highlight that LSTM is chosen because it handles sequential data well, making it ideal for text classification tasks."
+    ],
+    "limitations": "The diagram does not show specific details about the LSTM architecture (like gates or cell states), nor does it specify the exact feature engineering techniques used (e.g., word embeddings, TF-IDF). It also lacks information on the performance metrics used for evaluation or how"
+  },
+  {
+    "image_id": "page_10_img_1",
+    "page_number": 10,
+    "image_type": "diagram",
+    "importance": "high",
+    "visual_description": "This line chart, titled \"Accuracy_Comparison,\" displays the performance of multiple machine learning models over time (number of epochs). The y-axis represents accuracy (ranging from 0.80 to 0.94), and the x-axis represents the number of epochs (from 0.0 to 17.5). Each model is represented by a colored line with two variants: one for training accuracy (ending in \"_train\") and one for testing accuracy (ending in \"_test\"). The legend identifies models including LSTM, Bi-LSTM, CNN, and hybrid models like CNN+LSTM, as well as variants with Attention mechanisms and FastText embeddings (e.g., LSTM_Atttn_FT).",
+    "explanation": "The graph compares how well different neural network models learn and generalize over training epochs. Models with attention mechanisms (like LSTM_Atttn_FT) generally achieve higher accuracy faster than simpler models (like LSTM or CNN). The blue line (\"LSTM_Atttn_FT_train\") shows the highest training accuracy, while the orange line (\"LSTM_Atttn_FT_test\") shows the highest testing accuracy, indicating strong generalization. The purple line (\"LSTM_train\") shows lower training accuracy compared to attention-based models, suggesting it learns less effectively.",
+    "concepts": [
+      "Model Performance: Accuracy measures how correct predictions are.",
+      "Training vs. Testing: Training accuracy reflects performance on seen data; testing accuracy reflects performance on unseen data (generalization).",
+      "Overfitting: A model that performs very well on training data but poorly on testing data is overfitting.",
+      "Attention Mechanisms: These help models focus on important parts of input data, leading to better performance.",
+      "FastText Embeddings: These provide richer word representations, improving model performance."
+    ],
+    "teaching_notes": [
+      "Students should understand that accuracy alone doesn't tell the whole story\u2014testing accuracy is crucial for evaluating real-world performance. They should recognize that adding advanced features like attention mechanisms can significantly improve model performance. Students should also learn to interpret charts by comparing trends and identifying which models generalize best."
+    ],
+    "limitations": "The diagram does not show loss curves or confusion matrices, so students cannot assess model performance based on error rates or specific misclassifications. It only provides accuracy, which may not capture all aspects of model quality (e.g., precision, recall). Additionally, without knowing the exact dataset or problem context, students might misinterpret the significance of the accuracy values."
+  },
+  {
+    "image_id": "page_10_img_2",
+    "page_number": 10,
+    "image_type": "diagram",
+    "importance": "high",
+    "visual_description": "This is a line chart titled \"Loss_Comparison\". It plots the loss values (y-axis) against the number of epochs (x-axis) for multiple machine learning models. The y-axis ranges from 0.25 to 0.425, and the x-axis ranges from 0.0 to 17.5. There are 12 distinct colored lines, each representing a different model's training or testing loss over time. The legend identifies these models as variations of LSTM, Bi-LSTM, and CNN, some with attention mechanisms and FastText embeddings. The chart shows that all models' loss generally decreases over epochs, indicating learning, but at different rates and to different final values.",
+    "explanation": "The diagram compares how well different neural network models learned during training by tracking their \"loss\" \u2014 a measure of how wrong their predictions were. A lower loss means better performance. The curves show that models like \"LSTM_Attn_FT_train\" (blue) and \"LSTM_Attn_FT_test\" (orange) achieved the lowest losses overall, meaning they learned the task most effectively. Other models, such as \"Bi-LSTM_train\" (purple) and \"CNN_train\" (brown), had higher losses, indicating poorer performance. The fact that the test loss curves (e.g., orange and grey) stay close to the training loss curves (e.g., blue and green) suggests the models are generalizing well to unseen data, not just memorizing the training set.",
+    "concepts": [
+      "Loss: A metric measuring prediction error; lower is better.",
+      "Training vs. Testing Loss: Training loss measures error on data used to learn; testing loss measures error on new, unseen data.",
+      "Model Comparison: Different architectures (LSTM, Bi-LSTM, CNN) and enhancements (Attention, FastText) affect learning efficiency.",
+      "Generalization: When training and testing loss converge closely, the model performs well on new data."
+    ],
+    "teaching_notes": [
+      "Students should understand that this graph visually demonstrates model performance over time. They should learn to interpret trends: rapid initial drop indicates fast learning; flattening indicates convergence; and comparing final positions reveals relative model strength. This teaches them to evaluate models based on both training progress and final accuracy on unseen data."
+    ],
+    "limitations": "The diagram does not show accuracy curves, which would provide complementary information about correct predictions. It also doesn't specify the exact problem being solved (e.g., text classification). Furthermore, while it shows loss, it doesn't directly indicate whether the model"
+  },
+  {
+    "image_id": "page_11_img_1",
+    "page_number": 11,
+    "image_type": "diagram",
+    "importance": "high",
+    "visual_description": "This is a confusion matrix, presented as a color-coded grid. The rows represent the true labels (actual complaint categories) and the columns represent the predicted labels (what the model classified them as). The numbers in the cells show the count of instances for each combination of true and predicted label. A color scale on the right indicates the magnitude of these counts, with darker red representing higher counts (up to 12,500) and lighter pink representing lower counts (down to 0). The matrix is square, with 14 rows and 14 columns, corresponding to the 14 complaint categories listed.",
+    "explanation": "The diagram shows how well the proposed deep learning model classifies railway passenger complaints. Each cell tells you how many complaints that were truly of one category (row) were incorrectly predicted as another category (column). For example, the top-left cell (12,581) means the model correctly identified 12,581 complaints as \"Bedroll Complaints\". The large number in the cell at row \"Booking of Luggage / Parcels / Goods\" and column \"Bribery and corruption\" (13,084) indicates that the model frequently misclassifies complaints about luggage as complaints about bribery. The diagonal elements (where true label equals predicted label) represent correct classifications, while off-diagonal elements represent errors or misclassifications.",
+    "concepts": [
+      "Confusion Matrix: A table used to describe the performance of a classification model.",
+      "True Label vs. Predicted Label: The actual category versus what the model guessed.",
+      "Accuracy Assessment: By looking at the diagonal, you can see how often the model got it right.",
+      "Error Analysis: Off-diagonal values show where the model struggles \u2014 which categories are often confused with each other.",
+      "Model Evaluation: This matrix helps evaluate the model's performance beyond simple accuracy metrics."
+    ],
+    "teaching_notes": [
+      "Students should learn to interpret confusion matrices as a tool for evaluating classification models. They should understand that:",
+      "High values on the diagonal indicate good performance for that class.",
+      "Large off-diagonal values indicate common misclassifications between specific classes.",
+      "The matrix reveals not just overall accuracy but also which classes are most problematic for the model.",
+      "It\u2019s useful for identifying areas for model improvement."
+    ],
+    "limitations": "- The diagram does not provide overall accuracy or precision/recall metrics; those would need to be calculated from this matrix. - It doesn\u2019t show the distribution of data across classes (e.g., whether some"
+  },
+  {
+    "image_id": "page_11_img_2",
+    "page_number": 11,
+    "image_type": "diagram",
+    "importance": "high",
+    "visual_description": "This is a table titled \"Classification metrics of proposed system,\" showing performance scores for 14 different complaint categories. Each row corresponds to a specific type of complaint (e.g., \"Bedroll Complaints,\" \"Booking of Luggage / Parcels / Goods\"). For each category, the table lists four numerical metrics: precision, recall, f1-score, and support. The support column shows the number of samples (13302 or 13303) for each category.",
+    "explanation": "The table presents how well the proposed deep learning model classifies text complaints into their correct categories. For each category, it shows: - Precision: How many of the predicted instances for that category were actually correct. - Recall: How many of the actual instances of that category were correctly identified. - F1-Score: A harmonic mean of precision and recall, providing a single score that balances both metrics. - Support: The total number of actual examples in that category used for evaluation.",
+    "concepts": [
+      "Classification Metrics: Precision, recall, and F1-score are standard measures for evaluating the performance of a classification model.",
+      "Support: Indicates the size of the dataset for each class, helping to understand if performance varies due to class imbalance.",
+      "Model Performance: Higher values for precision, recall, and F1-score indicate better performance for that specific complaint category."
+    ],
+    "teaching_notes": [
+      "Students should learn how to interpret classification metrics like precision, recall, and F1-score. They should understand that these metrics help evaluate how well a model performs on different classes and why F1-score is useful when dealing with imbalanced datasets. Students should also recognize that even though some categories have lower scores (like \"Maintenance / Cleanliness\" with an F1-score of 0.76), they still perform reasonably well overall."
+    ],
+    "limitations": "The diagram does not show any visual representation such as a confusion matrix or model architecture. It only provides numerical performance metrics for each class. Therefore, students cannot visually see how predictions are distributed across classes or understand the model's structure from this table alone."
+  },
+  {
+    "image_id": "page_13_img_1",
+    "page_number": 13,
+    "image_type": "diagram",
+    "importance": "high",
+    "visual_description": "The image displays \"Algorithm 1: RailNeural,\" which is a pseudocode description of a machine learning model designed to classify railway complaints. It begins by defining the input data (an embedding matrix and its parameters) and the desired output (a complaint label). The core algorithm then iterates through epochs, applying spatial dropout, performing Bi-LSTM encoding, connecting with an attention mechanism, flattening the representation, feeding it to a sigmoid layer for activation, and finally updating parameters using the Adam optimizer with categorical cross-entropy loss.",
+    "explanation": "This algorithm outlines a neural network architecture specifically tailored for text classification tasks related to railway complaints. The process starts with converting raw text into numerical embeddings using FastText. These embeddings are then processed through a Bidirectional Long Short-Term Memory (Bi-LSTM) network, which captures context from both past and future words in the sequence. An attention mechanism is applied to weigh the importance of different parts of the text, followed by flattening to prepare for classification. A sigmoid activation function outputs probabilities for each of the 14 possible complaint categories (0 to 13). The model learns by adjusting its weights during training using the Adam optimizer and categorical cross-entropy loss function.",
+    "concepts": [
+      "Text Classification: Automatically categorizing text into predefined classes.",
+      "Embedding: Converting words into numerical vectors that capture semantic meaning.",
+      "Bi-LSTM: A type of recurrent neural network that processes sequences bidirectionally to understand context better.",
+      "Attention Mechanism: A technique that allows the model to focus on relevant parts of the input when making predictions.",
+      "Sigmoid Activation: A function used to output probabilities between 0 and 1 for binary or multi-class classification.",
+      "Categorical Cross-Entropy Loss: A loss function used for multi-class classification problems.",
+      "Adam Optimizer: An optimization algorithm that adapts learning rates for each parameter during training."
+    ],
+    "teaching_notes": [
+      "Students should learn how to design a neural network for text classification tasks, understanding the role of each component: preprocessing (embedding), sequence modeling (Bi-LSTM), contextual weighting (attention), and final classification (sigmoid + loss function). They should also grasp the iterative nature of training via epochs and the importance of optimization algorithms like Adam. This example demonstrates applying deep learning techniques to real-world problems such as customer complaint management."
+    ],
+    "limitations": "The diagram does not show any visual representation of the neural network architecture itself, only the algorithmic steps. It assumes familiarity with concepts like embedding matrices, LSTM networks, and optimization functions. It also"
+  }
+]

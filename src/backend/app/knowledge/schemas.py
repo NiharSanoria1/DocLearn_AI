@@ -22,4 +22,7 @@ class LearningUnit(BaseModel):
     
     combined_explanation: str
     
+    page_numbers: List[int]
+    image_ids: List[str]
+    
     grounding : dict

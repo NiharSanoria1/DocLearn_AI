@@ -2,16 +2,32 @@ from app.vision.explanation_parser import parse_sections
 from app.vision.schemas import ImageExplanation
 from app.vision.storage import store_image_explanation
 
-parsed = parse_sections(result["raw_explanation"])
 
-validated = ImageExplanation(
-    image_id=result["image_id"],
-    page_number=result["page_number"],
-    **parsed
-)
+def process_single_image_explanation(
+    result: dict,
+    base_dir: str,
+    pdf_id: str,
+):
+    """
+    Phase 5.2 pipeline:
+    - Parse raw image explanation
+    - Validate with schema
+    - Persist to disk
+    - Return validated object
+    """
 
-store_image_explanation(
-    base_dir="data/processed/test_user",
-    pdf_id="80f241f5-f098-4d93-b79b-f15a933b4f7a",
-    explanation_data=validated.model_dump()
-)
+    parsed = parse_sections(result["raw_explanation"])
+
+    validated = ImageExplanation(
+        image_id=result["image_id"],
+        page_number=result["page_number"],
+        **parsed
+    )
+
+    store_image_explanation(
+        base_dir=base_dir,
+        pdf_id=pdf_id,
+        explanation_data=validated.model_dump()
+    )
+
+    return validated
