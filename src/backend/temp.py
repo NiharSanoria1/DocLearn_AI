@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # ----------------------------
 # Imports
@@ -14,6 +15,8 @@ from app.vision.pipeline import process_single_image_explanation
 
 from app.knowledge.pipeline import run_phase6
 from app.chunking.pipeline import run_phase7
+
+from app.embeddings.pipeline import run_phase8
 
 
 # ----------------------------
@@ -134,3 +137,9 @@ for c in chunks:
     print(
         f"{c.chunk_id} | {c.unit_id} | {c.concept} | words={len(c.text.split())}"
     )
+
+
+print("▶ Phase 8: Embedding Generation")
+vector_store = run_phase8(chunks, pdf_id)
+
+print("✔ Phase 8 Done — vector index created")
