@@ -42,11 +42,21 @@ class FaissVectorStore:
         self.save()
         
     def query(self, embedding: np.ndarray, k: int=5):
+        if self.faiss_index is None:
+            self.load()
+            
+        # Get Distances (D) and Indices (I)
         D, I = self.faiss_index.search(embedding.astype("float32"), k)
+        
         results = []
-        for idx_list in I:
-            for idx in idx_list:
-                results.append(self.metadata[idx])
+        for i, idx_list in enumerate(I):
+            for j, idx in enumerate(idx_list):
+                if idx != -1 and idx < len(self.metadata):
+                    meta = self.metadata[idx].copy()
+                    # <--- CHANGED: Inject the similarity score into metadata
+                    # FAISS returns distance. For Inner Product (IP), higher is better.
+                    meta["score"] = float(D[i][j]) 
+                    results.append(meta)
         return results
             
             

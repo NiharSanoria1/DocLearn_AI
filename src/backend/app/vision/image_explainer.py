@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-huggingface_api_key = os.getenv("HUGGINGFACE_API_KEY")
+huggingface_api_key = os.getenv("HF_TOKEN")
 
 
 def image_to_base64(image_path: str) -> str:

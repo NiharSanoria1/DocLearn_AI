@@ -18,11 +18,14 @@ from app.chunking.pipeline import run_phase7
 
 from app.embeddings.pipeline import run_phase8
 
+from app.retrieval.pipeline import retrieve_relevant_chunks
 
 # ----------------------------
 # Config
 # ----------------------------
-pdf_id = "77573c06-3e83-4ab6-a3fb-f62987065c5a"
+# pdf_id = "77573c06-3e83-4ab6-a3fb-f62987065c5a"
+pdf_id = "80f241f5-f098-4d93-b79b-f15a933b4f7a"
+
 
 raw_base = Path("data/raw/test_user")
 processed_base = Path("data/processed/test_user")
@@ -143,3 +146,42 @@ print("▶ Phase 8: Embedding Generation")
 vector_store = run_phase8(chunks, pdf_id)
 
 print("✔ Phase 8 Done — vector index created")
+
+# 1) Choose a query
+query = "Explain LSTM memory and gate mechanisms"
+
+# 2) Compute its embedding
+from app.embeddings.generator import get_embedding_model
+import numpy as np
+
+embedder = get_embedding_model(model_name="BAAI/bge-large-en-v1.5")
+query_emb = embedder.embed_query(query)
+
+# 3) Run vector store search
+results = vector_store.query(np.array([query_emb]), k=5)
+
+print(f"Top results for query: '{query}'\n")
+for r in results:
+    print("Chunk ID:", r["chunk_id"])
+    print("Concept:", r["concept"])
+    print("Text:", r["text"][:300], "...\n")
+
+
+# retriever
+
+question = "Explain LSTM memory and gate mechanisms"
+
+result = retrieve_relevant_chunks(
+    question=question,
+    pdf_id=pdf_id
+)
+
+print("\n🧠 INTENT")
+print(result["intent"])
+
+print("\n📌 SELECTED CHUNKS\n")
+for i, c in enumerate(result["chunks"], 1):
+    print(f"{i}. {c['chunk_id']}")
+    print(f"   Concept: {c.get('concept')}")
+    print(f"   Pages: {c.get('page_numbers')}")
+    print(f"   Text: {c['text'][:200]}...\n")
