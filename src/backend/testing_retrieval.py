@@ -2,7 +2,8 @@ from app.retrieval.pipeline import retrieve_relevant_chunks
 
 pdf_id = "80f241f5-f098-4d93-b79b-f15a933b4f7a"
 
-question = "what is reinforcement learning"
+question = "what is Markov Decision Process ?"
+print("getting chunks")
 
 result = retrieve_relevant_chunks(
     question=question,
@@ -18,3 +19,16 @@ for i, c in enumerate(result["chunks"], 1):
     print(f"   Concept: {c.get('concept')}")
     print(f"   Pages: {c.get('page_numbers')}")
     print(f"   Text: {c['text'][:200]}...\n")
+
+
+from app.answer_generator.pipeline import generate_answer
+
+print("generating answer")
+answer = generate_answer(
+    question=result["question"],
+    intent=result["intent"]["intent"],
+    chunks=result["chunks"]
+)
+
+print("📚 FINAL ANSWER")
+print(answer)

@@ -57,7 +57,14 @@ def rerank_chunks(
             # require at least 2 meaningful hits
             if key_term_hits < max(1, len(key_terms) // 2):
                 continue  # 🚫 not about the asked concept
-
+            
+            # # HARD FILTER: discard pure metadata / references
+            if (
+                "journal of" in chunk_text or
+                "references" in chunk_text or
+                "contents lists available" in chunk_text
+            ):
+                continue
         # ---------------------------------------------------------
         # FEATURE 1: Noise reduction for generic headers
         # ---------------------------------------------------------
