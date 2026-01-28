@@ -5,6 +5,8 @@ from dotenv import load_dotenv
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from langchain_core.messages import SystemMessage, HumanMessage
 
+from .guardrails import enforce_answer_guardrails
+
 load_dotenv()
 
 hf_api_key = os.getenv("HF_TOKEN")
@@ -97,7 +99,9 @@ def generate_answer(
     ]
     
     response = chat_llm.invoke(messages)
-    answer_text = response.content.strip()
+    raw_answer = response.content.strip()
     
-    return answer_text
+    final_answer = enforce_answer_guardrails(raw_answer, context_text)
+    
+    return final_answer
     

@@ -2,7 +2,7 @@ from app.retrieval.pipeline import retrieve_relevant_chunks
 
 pdf_id = "80f241f5-f098-4d93-b79b-f15a933b4f7a"
 
-question = "what is Markov Decision Process ?"
+question = "what is the title of this file ?"
 print("getting chunks")
 
 result = retrieve_relevant_chunks(
