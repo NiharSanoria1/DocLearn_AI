@@ -59,3 +59,4 @@ for idx, r in enumerate(results, start=1):
     print(f"   Concept:   {r['concept']}")
     print(f"   Page nums: {r['page_numbers']}")
     print(f"   Text snippet: {r['text'][:200]}...\n")
+
