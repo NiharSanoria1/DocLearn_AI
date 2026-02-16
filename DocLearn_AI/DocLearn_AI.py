@@ -12,11 +12,13 @@ def sidebar_item(chat_session: dict) -> rx.Component:
 
     return rx.hstack(
         rx.button(
-            rx.icon("message-square", size = 16),
+            rx.icon("message-square", size = 30),
             rx.text(chat_session["title"], size="1", truncate=True), # truncate uuid so it fits
             # layout property
             variant = "ghost",
-            width="100%",
+            # width="100%",
+            flex = "1",
+            min_width="0",
 
             style={
                 "justify_content": "flex-start",
@@ -45,14 +47,14 @@ def sidebar_item(chat_session: dict) -> rx.Component:
             ),
             spacing="1",
         ),
-        
+        padding = "0.5em",
         width = "100%",
         align_items="center",
         padding_right="0.5em",
         # highlight if active
         background_color= rx.cond(
             State.thread_id == chat_session["id"],
-            "#80555512",
+            "#548BB838",
             "transparent"
         ), 
         border_radius = "6px"
@@ -90,8 +92,20 @@ def rename_dialog() -> rx.Component:
 def sidebar()-> rx.Component:
         return rx.box(
             rx.vstack(
-                rx.heading("Chats", size="4", color = "gray"),
-                
+                rx.hstack(
+                    rx.heading("Chats", size="4", color = "gray"),
+                    rx.spacer(),
+                    #close button
+                    rx.icon_button(
+                        rx.icon("panel-left-close", size=20),
+                        variant="ghost",
+                        color_scheme="gray",
+                        on_click=State.toggle_sidebar,
+                        cursor="pointer"
+                ),
+                width="100%",
+                align_items="center"
+            ),
                 # new chat button
                 rx.button(
                     "+ New Chat",
@@ -120,11 +134,15 @@ def sidebar()-> rx.Component:
                 padding="1em",
                 height= "100%"
             ),
-            width = "260px",
+            width = "360px",
             height="100vh",
             background_color= "#f9f9f909",
             border_right="1px solid #e0e0e0",
-            display = ["none", "none", "block"]
+            # display = ["none", "none", "block"],
+            
+            # If open, show block. If closed, hide entirely (display="none")
+            display = rx.cond(State.sidebar_open, "block", "none"),
+            
         )
     
     
@@ -141,10 +159,11 @@ def qa(question : str, answer: str) -> rx.Component:
                margin_top="1em")
             ,
         rx.box(
-            rx.text(answer, style=style.answer_style),
+            rx.markdown(answer, style=style.answer_style),
             text_align = "left", 
-            margin_top="0.5em")
-            ,
+            margin_top="0.5em",
+            ),
+        
         width="100%",
     )
 
@@ -166,29 +185,33 @@ def chat() -> rx.Component:
     
 # input funtionality
 def action_bar() -> rx.Component:
-    return rx.hstack(
-        rx.input(
-            value = State.question,
-            placeholder="type your question here", 
-            on_change=State.set_question,
-            style= style.input_style,
-            width="100%",
-            on_key_down=State.check_enter_key,
-            
-            id="question_input"
+    return rx.form(
+        rx.hstack(
+            rx.input(
+                placeholder="Type your question here", 
+                style= style.input_style,
+                width="100%",
+                id="question_box" , # this id is used to grab the text
+                height="50px", 
+                radius="large" # Optional: Makes corners rounder
             ),
-        
-        rx.button("ask", 
-               # alling the answer function
-               on_click=State.answer,
-               style=style.button_style
-               ),
-        width="100%",
-        padding="1em",
-        # background_color = "white",
-        # border_top="1px solid #e0e0e0"
-        max_width="800px",
-        margin_x="auto"
+
+            rx.button("Ask", 
+                   # alling the answer function
+                   type="submit",
+                   style=style.button_style,
+                   height="50px"
+            ),
+            width="100%",
+            padding="1em",
+            # background_color = "white",
+            # border_top="1px solid #e0e0e0"
+            max_width="900px",
+            margin_x="auto"
+        ),
+        on_submit=State.handle_form_submit,
+        reset_on_submit=True,
+        width="100%"
     )
 
 def index() -> rx.Component:
@@ -199,6 +222,24 @@ def index() -> rx.Component:
        # right, main chat area
        
        rx.vstack(
+           # Header/ open button
+           rx.box(
+               rx.cond(
+                   # only show is box if sidebar is closed
+                   ~State.sidebar_open,
+                   rx.icon_button(
+                       rx.icon("panel-left-open", size= 24),
+                       variant="ghost",
+                       color_scheme="gray",
+                       on_click=State.toggle_sidebar,
+                       margin="1em"
+                   ),
+                   rx.box()
+               ),
+               width="100%",
+               height="50px"
+           ),
+           
            #chat history
            rx.box(
                rx.container(
